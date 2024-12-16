@@ -1,0 +1,628 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/hugoabbot/Desktop/LA9/simulation/modelsim
+Eadder_subtractor
+Z1 w1728317883
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 11
+R0
+Z4 8C:/Users/hugoabbot/Desktop/LA9/source_code/adder_subtractor.vhd
+Z5 FC:/Users/hugoabbot/Desktop/LA9/source_code/adder_subtractor.vhd
+l0
+Z6 L25 1
+V[ZG=on[Q=YP3<Ggg;mkgA2
+!s100 WMBlnII`0X@GLdCjNC8i03
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1732553942
+!i10b 1
+Z9 !s108 1732553942.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/adder_subtractor.vhd|
+Z11 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/adder_subtractor.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abdf_type
+R2
+R3
+DEx4 work 16 adder_subtractor 0 22 [ZG=on[Q=YP3<Ggg;mkgA2
+!i122 11
+l66
+L37 115
+V2mdnY9iYNK?7<1?CH9`Z91
+!s100 KaF[XYm;DVlXPcKb=ISE43
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ealu
+Z14 w1728352083
+R2
+R3
+!i122 10
+R0
+Z15 8C:/Users/hugoabbot/Desktop/LA9/source_code/alu.vhd
+Z16 FC:/Users/hugoabbot/Desktop/LA9/source_code/alu.vhd
+l0
+L6 1
+VP36oU`nL9E38jBaLKkij^2
+!s100 jMScCa6:jOd2BJ4kW3?[K0
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/alu.vhd|
+Z18 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/alu.vhd|
+!i113 1
+R12
+R13
+Aalu_type
+R2
+R3
+DEx4 work 3 alu 0 22 P36oU`nL9E38jBaLKkij^2
+!i122 10
+l37
+L18 53
+VnLJ4GQ0cj8@J2Zg_^Sn523
+!s100 NF7c8D9=DSCOI1Z920HNU0
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Eclock_reset_generation
+Z19 w1731945911
+R2
+R3
+!i122 13
+R0
+Z20 8C:/Users/hugoabbot/Desktop/LA9/clock_reset_generation.vhd
+Z21 FC:/Users/hugoabbot/Desktop/LA9/clock_reset_generation.vhd
+l0
+L4 1
+VNE;Ac[@`8QKEjBON0_Poe1
+!s100 D<kaQVoBXCnXDnebTEUmO0
+R7
+33
+Z22 !s110 1732553943
+!i10b 1
+Z23 !s108 1732553943.000000
+Z24 !s90 -reportprogress|300|-2008|-work|work|C:/Users/hugoabbot/Desktop/LA9/clock_reset_generation.vhd|
+Z25 !s107 C:/Users/hugoabbot/Desktop/LA9/clock_reset_generation.vhd|
+!i113 1
+Z26 o-2008 -work work
+R13
+Artl
+R2
+R3
+DEx4 work 22 clock_reset_generation 0 22 NE;Ac[@`8QKEjBON0_Poe1
+!i122 13
+l15
+L11 23
+V0RHa3DE>[JZ<VI9@C]1I31
+!s100 =N6f7PHDR>PCWlf7ZlFPZ3
+R7
+33
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R26
+R13
+Econtrol_signals_logic
+Z27 w1727904222
+R2
+R3
+!i122 9
+R0
+Z28 8C:/Users/hugoabbot/Desktop/LA9/source_code/control_signals_logic.vhd
+Z29 FC:/Users/hugoabbot/Desktop/LA9/source_code/control_signals_logic.vhd
+l0
+L4 1
+VkbaDlLcRJg`QF;2C5bHWH3
+!s100 90AcQ8f9@@I>:<FiNBGMl2
+R7
+31
+R8
+!i10b 1
+R9
+Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/control_signals_logic.vhd|
+Z31 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/control_signals_logic.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+DEx4 work 21 control_signals_logic 0 22 kbaDlLcRJg`QF;2C5bHWH3
+!i122 9
+l44
+L42 21
+V=IKK[n@HUo`SU>VdNW`3[0
+!s100 Y<`n`D^38z8?7g[EYK5Cl2
+R7
+31
+R8
+!i10b 1
+R9
+R30
+R31
+!i113 1
+R12
+R13
+Ed_ff
+Z32 w1729869720
+R2
+R3
+!i122 8
+R0
+Z33 8C:/Users/hugoabbot/Desktop/LA9/source_code/d_ff.vhd
+Z34 FC:/Users/hugoabbot/Desktop/LA9/source_code/d_ff.vhd
+l0
+L5 1
+VEUF7<d:ha_zKlT^3@18JL0
+!s100 9lHF:>lM[jjTKMCmHE?S>3
+R7
+31
+R8
+!i10b 1
+R9
+Z35 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/d_ff.vhd|
+Z36 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/d_ff.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+DEx4 work 4 d_ff 0 22 EUF7<d:ha_zKlT^3@18JL0
+!i122 8
+l16
+L14 13
+VY5C=gZ5]JzHAQiCWOCTKP2
+!s100 9:D>zWZQ:K8n3V]Q^2:M]0
+R7
+31
+R8
+!i10b 1
+R9
+R35
+R36
+!i113 1
+R12
+R13
+Edatapath
+Z37 w1731947604
+R2
+R3
+!i122 7
+R0
+Z38 8C:/Users/hugoabbot/Desktop/LA9/source_code/datapath.vhd
+Z39 FC:/Users/hugoabbot/Desktop/LA9/source_code/datapath.vhd
+l0
+R6
+VZ0f5Z1U>WiVh@@54ZHhg[1
+!s100 oT^h2U>kEnH_T;Zl@8W5B2
+R7
+31
+Z40 !s110 1732553941
+!i10b 1
+Z41 !s108 1732553941.000000
+Z42 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/datapath.vhd|
+Z43 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/datapath.vhd|
+!i113 1
+R12
+R13
+Abdf_type
+R2
+R3
+DEx4 work 8 datapath 0 22 Z0f5Z1U>WiVh@@54ZHhg[1
+!i122 7
+l107
+L55 163
+V]eAaA6<[=dXgNSD9Ql]Cd1
+!s100 A<>P`?2GmOhm>bO^Ucl4E2
+R7
+31
+R40
+!i10b 1
+R41
+R42
+R43
+!i113 1
+R12
+R13
+Edecoder_3
+Z44 w1726956227
+R2
+R3
+!i122 6
+R0
+Z45 8C:/Users/hugoabbot/Desktop/LA9/source_code/decoder_3.vhd
+Z46 FC:/Users/hugoabbot/Desktop/LA9/source_code/decoder_3.vhd
+l0
+L4 1
+V42=iNiOn9;W7]UI8MbJK02
+!s100 oM02?MVgNC2^0i2O5TP^V0
+R7
+31
+R40
+!i10b 1
+R41
+Z47 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/decoder_3.vhd|
+Z48 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/decoder_3.vhd|
+!i113 1
+R12
+R13
+Adecoder_type
+R2
+R3
+DEx4 work 9 decoder_3 0 22 42=iNiOn9;W7]UI8MbJK02
+!i122 6
+l22
+L20 15
+VHFiA>`ER8o084fiNR=4c]1
+!s100 hM]WPa1b:NMHdUHD>?fmM1
+R7
+31
+R40
+!i10b 1
+R41
+R47
+R48
+!i113 1
+R12
+R13
+Edreg_e
+Z49 w1731340655
+R2
+R3
+!i122 5
+R0
+Z50 8C:/Users/hugoabbot/Desktop/LA9/source_code/dreg_e.vhd
+Z51 FC:/Users/hugoabbot/Desktop/LA9/source_code/dreg_e.vhd
+l0
+L4 1
+VcA0nD:J]ozT4=406KRCWc2
+!s100 IWPM]nlSeP@ifWiG`L`Nn0
+R7
+31
+R40
+!i10b 1
+R41
+Z52 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/dreg_e.vhd|
+Z53 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/dreg_e.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+DEx4 work 6 dreg_e 0 22 cA0nD:J]ozT4=406KRCWc2
+!i122 5
+l19
+L14 29
+VO7NeTUH9`F[k7SlnT>W:C2
+!s100 N_C>WJ1eFhR]2WJKAU?8i1
+R7
+31
+R40
+!i10b 1
+R41
+R52
+R53
+!i113 1
+R12
+R13
+Eeeprom_memory
+Z54 w1731945930
+Z55 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 12
+R0
+Z56 8C:/Users/hugoabbot/Desktop/LA9/eeprom_memory.vhd
+Z57 FC:/Users/hugoabbot/Desktop/LA9/eeprom_memory.vhd
+l0
+L6 1
+V1nm7A4AXhbWIe=ZJLzM9D1
+!s100 SbOB;U`zF7zoJb[8b956A0
+R7
+33
+R22
+!i10b 1
+R23
+Z58 !s90 -reportprogress|300|-2008|-work|work|C:/Users/hugoabbot/Desktop/LA9/eeprom_memory.vhd|
+Z59 !s107 C:/Users/hugoabbot/Desktop/LA9/eeprom_memory.vhd|
+!i113 1
+R26
+R13
+Artl
+R55
+R2
+R3
+DEx4 work 13 eeprom_memory 0 22 1nm7A4AXhbWIe=ZJLzM9D1
+!i122 12
+l77
+L19 88
+Vo;]Ld3:d[nJa:OjDUJXGm2
+!s100 h5ZPLR5`?4VnNEmzWk[Q10
+R7
+33
+R22
+!i10b 1
+R23
+R58
+R59
+!i113 1
+R26
+R13
+Efulladder
+Z60 w1728312967
+R2
+R3
+!i122 4
+R0
+Z61 8C:/Users/hugoabbot/Desktop/LA9/source_code/fulladder.vhd
+Z62 FC:/Users/hugoabbot/Desktop/LA9/source_code/fulladder.vhd
+l0
+L5 1
+VoeBRkQ[hgH^j7e[BO:F343
+!s100 B^J^5XGDz27>2oFfDGA@N0
+R7
+31
+R40
+!i10b 1
+R41
+Z63 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/fulladder.vhd|
+Z64 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/fulladder.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+DEx4 work 9 fulladder 0 22 oeBRkQ[hgH^j7e[BO:F343
+!i122 4
+l19
+L15 9
+VSGTJ<]^=z8A<6Hac2zOA83
+!s100 BK2SQ23IMfNzTA23OKP9B0
+R7
+31
+R40
+!i10b 1
+R41
+R63
+R64
+!i113 1
+R12
+R13
+Einstruction_sequencer
+Z65 w1730906036
+R2
+R3
+!i122 3
+R0
+Z66 8C:/Users/hugoabbot/Desktop/LA9/source_code/instruction_sequencer.vhd
+Z67 FC:/Users/hugoabbot/Desktop/LA9/source_code/instruction_sequencer.vhd
+l0
+L5 1
+V^6[IBIP2ic_4@IlT:FmTY2
+!s100 G=XSNXe5z:hFD4<2RS8iX3
+R7
+31
+Z68 !s110 1732553940
+!i10b 1
+Z69 !s108 1732553940.000000
+Z70 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/instruction_sequencer.vhd|
+Z71 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/instruction_sequencer.vhd|
+!i113 1
+R12
+R13
+Ainstruction_sequencer_0
+R2
+R3
+DEx4 work 21 instruction_sequencer 0 22 ^6[IBIP2ic_4@IlT:FmTY2
+!i122 3
+l39
+L22 59
+VkJH90NzSn?n<Waa[lB@]_3
+!s100 fEkSVKNSVWFnhQdW?ZUzU3
+R7
+31
+R68
+!i10b 1
+R69
+R70
+R71
+!i113 1
+R12
+R13
+Esimple_cpu
+Z72 w1732120088
+R2
+R3
+!i122 0
+R0
+Z73 8C:/Users/hugoabbot/Desktop/LA9/source_code/simple_cpu.vhd
+Z74 FC:/Users/hugoabbot/Desktop/LA9/source_code/simple_cpu.vhd
+l0
+R6
+VIi;8@mL1:VlJJ]@;o9[;k0
+!s100 <3I7b4MUfDoQVi:c6645k1
+R7
+31
+Z75 !s110 1732553939
+!i10b 1
+Z76 !s108 1732553939.000000
+Z77 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/simple_cpu.vhd|
+Z78 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/simple_cpu.vhd|
+!i113 1
+R12
+R13
+Abdf_type
+R2
+R3
+DEx4 work 10 simple_cpu 0 22 Ii;8@mL1:VlJJ]@;o9[;k0
+!i122 0
+l167
+L37 225
+VAz^NVi`_ie9aRoBXffYa;3
+!s100 ]9Vnce[QKC8OSP4QzXR5h2
+R7
+31
+R75
+!i10b 1
+R76
+R77
+R78
+!i113 1
+R12
+R13
+Esimple_cpu_testbench
+Z79 w1731945924
+R2
+R3
+!i122 14
+R0
+Z80 8C:/Users/hugoabbot/Desktop/LA9/simple_cpu_testbench.vhd
+Z81 FC:/Users/hugoabbot/Desktop/LA9/simple_cpu_testbench.vhd
+l0
+R6
+Vmf_6eDnz@kVn=^nH29RQz2
+!s100 Ab3oT62Ahm1?bK@@aZ4YU2
+R7
+33
+R22
+!i10b 1
+R23
+Z82 !s90 -reportprogress|300|-2008|-work|work|C:/Users/hugoabbot/Desktop/LA9/simple_cpu_testbench.vhd|
+!s107 C:/Users/hugoabbot/Desktop/LA9/simple_cpu_testbench.vhd|
+!i113 1
+R26
+R13
+Abdf_type
+R2
+R3
+DEx4 work 20 simple_cpu_testbench 0 22 mf_6eDnz@kVn=^nH29RQz2
+!i122 14
+l68
+L28 73
+VH4Gg48fT^m?>KNfXN9aK53
+!s100 @=GNHa451hoH4XUoHVh9l1
+R7
+33
+R22
+!i10b 1
+R23
+R82
+Z83 !s107 C:/Users/hugoabbot/Desktop/LA9/simple_cpu_testbench.vhd|
+!i113 1
+R26
+R13
+Etri_state_model
+Z84 w1731340638
+R2
+R3
+!i122 2
+R0
+Z85 8C:/Users/hugoabbot/Desktop/LA9/source_code/tri_state_model.vhd
+Z86 FC:/Users/hugoabbot/Desktop/LA9/source_code/tri_state_model.vhd
+l0
+L4 1
+V>;]A6dQ<M[M[fVPZU45AV0
+!s100 aIT3:0_^3gWn<^g?;:27J2
+R7
+31
+R68
+!i10b 1
+R69
+Z87 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/tri_state_model.vhd|
+Z88 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/tri_state_model.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+DEx4 work 15 tri_state_model 0 22 >;]A6dQ<M[M[fVPZU45AV0
+!i122 2
+l14
+L12 14
+VR9Dz;4ABh;8]:MC:UBS?N2
+!s100 eX=Qj2RZZC>bZb^o33HQh2
+R7
+31
+R68
+!i10b 1
+R69
+R87
+R88
+!i113 1
+R12
+R13
+Ez_ff
+Z89 w1730062073
+R2
+R3
+!i122 1
+R0
+Z90 8C:/Users/hugoabbot/Desktop/LA9/source_code/Z_ff.vhd
+Z91 FC:/Users/hugoabbot/Desktop/LA9/source_code/Z_ff.vhd
+l0
+L5 1
+V^5D`bZ]Lmlb_@@cP16gJD1
+!s100 S2NM2h52Ah?O`M]IQFJ0:3
+R7
+31
+R68
+!i10b 1
+R76
+Z92 !s90 -reportprogress|300|-93|-work|work|C:/Users/hugoabbot/Desktop/LA9/source_code/Z_ff.vhd|
+Z93 !s107 C:/Users/hugoabbot/Desktop/LA9/source_code/Z_ff.vhd|
+!i113 1
+R12
+R13
+Azff
+R2
+R3
+DEx4 work 4 z_ff 0 22 ^5D`bZ]Lmlb_@@cP16gJD1
+!i122 1
+l34
+L19 36
+VHH@Q5l`mz>EK:5bHUWN9l3
+!s100 iQKV9NBGI_9zMc0D1UBk=1
+R7
+31
+R68
+!i10b 1
+R76
+R92
+R93
+!i113 1
+R12
+R13

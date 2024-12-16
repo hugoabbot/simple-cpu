@@ -1,0 +1,200 @@
+# Reading pref.tcl
+# do simple_cpu_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/simple_cpu.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:58:59 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/simple_cpu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_cpu
+# -- Compiling architecture bdf_type of simple_cpu
+# End time: 11:58:59 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/Z_ff.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:58:59 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/Z_ff.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Z_ff
+# -- Compiling architecture zff of Z_ff
+# End time: 11:59:00 on Nov 25,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/tri_state_model.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:00 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/tri_state_model.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tri_state_model
+# -- Compiling architecture rtl of tri_state_model
+# End time: 11:59:00 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/instruction_sequencer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:00 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/instruction_sequencer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity instruction_sequencer
+# -- Compiling architecture instruction_sequencer_0 of instruction_sequencer
+# End time: 11:59:00 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/fulladder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:01 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/fulladder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fulladder
+# -- Compiling architecture rtl of fulladder
+# End time: 11:59:01 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/dreg_e.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:01 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/dreg_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dreg_e
+# -- Compiling architecture rtl of dreg_e
+# End time: 11:59:01 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/decoder_3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:01 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/decoder_3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_3
+# -- Compiling architecture decoder_type of decoder_3
+# End time: 11:59:01 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/datapath.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:01 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity datapath
+# -- Compiling architecture bdf_type of datapath
+# End time: 11:59:01 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/d_ff.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:02 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/d_ff.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity d_ff
+# -- Compiling architecture rtl of d_ff
+# End time: 11:59:02 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/control_signals_logic.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:02 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/control_signals_logic.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity control_signals_logic
+# -- Compiling architecture rtl of control_signals_logic
+# End time: 11:59:02 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/alu.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:02 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/alu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity alu
+# -- Compiling architecture alu_type of alu
+# End time: 11:59:02 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA9/source_code/adder_subtractor.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:02 on Nov 25,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/hugoabbot/Desktop/LA9/source_code/adder_subtractor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_subtractor
+# -- Compiling architecture bdf_type of adder_subtractor
+# End time: 11:59:02 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+do testbench.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:03 on Nov 25,2024
+# vcom -reportprogress 300 -2008 -work work C:/Users/hugoabbot/Desktop/LA9/eeprom_memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity eeprom_memory
+# -- Compiling architecture rtl of eeprom_memory
+# End time: 11:59:03 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:03 on Nov 25,2024
+# vcom -reportprogress 300 -2008 -work work C:/Users/hugoabbot/Desktop/LA9/clock_reset_generation.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity clock_reset_generation
+# -- Compiling architecture rtl of clock_reset_generation
+# End time: 11:59:03 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:03 on Nov 25,2024
+# vcom -reportprogress 300 -2008 -work work C:/Users/hugoabbot/Desktop/LA9/simple_cpu_testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_cpu_testbench
+# -- Compiling architecture bdf_type of simple_cpu_testbench
+# End time: 11:59:03 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim simple_cpu_testbench 
+# Start time: 11:59:04 on Nov 25,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.simple_cpu_testbench(bdf_type)
+# Loading work.clock_reset_generation(rtl)
+# Loading ieee.numeric_std(body)
+# Loading work.eeprom_memory(rtl)
+# Loading work.tri_state_model(rtl)
+# Loading work.simple_cpu(bdf_type)
+# Loading work.decoder_3(decoder_type)
+# Loading work.control_signals_logic(rtl)
+# Loading work.datapath(bdf_type)
+# Loading work.alu(alu_type)
+# Loading work.adder_subtractor(bdf_type)
+# Loading work.fulladder(rtl)
+# Loading work.dreg_e(rtl)
+# Loading work.z_ff(zff)
+# Loading work.d_ff(rtl)
+# Loading work.instruction_sequencer(instruction_sequencer_0)
+# End time: 12:00:00 on Nov 25,2024, Elapsed time: 0:00:56
+# Errors: 0, Warnings: 0

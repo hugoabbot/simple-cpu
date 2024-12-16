@@ -1,0 +1,19 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA3/decoder_3.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA4/control_signals_logic.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA5/fulladder.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA5/alu.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA5/adder_subtractor.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA7/Z_ff.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA7/instruction_sequencer.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA7/d_ff.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA8/tri_state_model.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA8/dreg_e.vhd}
+vcom -93 -work work {C:/Users/hugoabbot/Desktop/LA8/datapath.vhd}
+

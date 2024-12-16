@@ -1,0 +1,931 @@
+|simple_cpu
+reset => datapath:b2v_inst2.reset
+reset => instruction_sequencer:b2v_sequencer_0.reset
+clock => datapath:b2v_inst2.clock
+clock => instruction_sequencer:b2v_sequencer_0.clock
+data_bus[0] <> datapath:b2v_inst2.data_bus[0]
+data_bus[1] <> datapath:b2v_inst2.data_bus[1]
+data_bus[2] <> datapath:b2v_inst2.data_bus[2]
+data_bus[3] <> datapath:b2v_inst2.data_bus[3]
+data_bus[4] <> datapath:b2v_inst2.data_bus[4]
+data_bus[5] <> datapath:b2v_inst2.data_bus[5]
+data_bus[6] <> datapath:b2v_inst2.data_bus[6]
+data_bus[7] <> datapath:b2v_inst2.data_bus[7]
+r << control_signals_logic:b2v_inst.r
+w << control_signals_logic:b2v_inst.w
+address_bus[0] << datapath:b2v_inst2.address_bus[0]
+address_bus[1] << datapath:b2v_inst2.address_bus[1]
+address_bus[2] << datapath:b2v_inst2.address_bus[2]
+address_bus[3] << datapath:b2v_inst2.address_bus[3]
+address_bus[4] << datapath:b2v_inst2.address_bus[4]
+
+
+|simple_cpu|decoder_3:b2v_decoder_0
+execute => load.IN1
+execute => store.IN1
+execute => add.IN1
+execute => sub.IN1
+execute => inc.IN1
+execute => dec.IN1
+execute => bra.IN1
+execute => beq.IN1
+opcode[0] => store.IN1
+opcode[0] => sub.IN1
+opcode[0] => dec.IN1
+opcode[0] => beq.IN1
+opcode[0] => load.IN1
+opcode[0] => add.IN1
+opcode[0] => inc.IN1
+opcode[0] => bra.IN1
+opcode[1] => add.IN0
+opcode[1] => bra.IN0
+opcode[1] => load.IN0
+opcode[1] => inc.IN0
+opcode[2] => inc.IN1
+opcode[2] => bra.IN1
+opcode[2] => load.IN1
+opcode[2] => add.IN1
+load <= load.DB_MAX_OUTPUT_PORT_TYPE
+store <= store.DB_MAX_OUTPUT_PORT_TYPE
+add <= add.DB_MAX_OUTPUT_PORT_TYPE
+sub <= sub.DB_MAX_OUTPUT_PORT_TYPE
+inc <= inc.DB_MAX_OUTPUT_PORT_TYPE
+dec <= dec.DB_MAX_OUTPUT_PORT_TYPE
+bra <= bra.DB_MAX_OUTPUT_PORT_TYPE
+beq <= beq.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|control_signals_logic:b2v_inst
+load => r.IN0
+load => cmar.IN0
+load => cd0.IN0
+store => w.IN0
+store => cmar.IN1
+add => r.IN1
+add => cmar.IN1
+add => cmbr.IN0
+sub => r.IN1
+sub => cmar.IN1
+sub => cmbr.IN1
+sub => F0.IN0
+inc => r.IN1
+inc => w.IN0
+inc => cmar.IN1
+inc => cmbr.IN1
+inc => F1.IN0
+dec => r.IN1
+dec => w.IN0
+dec => cmar.IN1
+dec => cmbr.IN1
+dec => F0.IN1
+dec => F1.IN1
+bra => eir.IN1
+bra => cpc.IN0
+beq => eir.IN0
+t0 => cmar.IN1
+t0 => epc.IN0
+t1 => r.IN1
+t1 => cir.DATAIN
+t2 => epc.IN1
+t2 => calu.IN1
+t2 => F1.IN1
+t3 => cpc.IN1
+t3 => ealu.IN1
+t4 => cmar.IN1
+t4 => eir.IN1
+t4 => cpc.IN1
+t4 => cpc.IN1
+t5 => r.IN1
+t5 => w.IN1
+t5 => cmbr.IN1
+t5 => cd0.IN1
+t6 => embr.IN1
+t6 => F0.IN1
+t6 => F1.IN1
+t7 => w.IN1
+t7 => w.IN1
+t7 => cd0.IN1
+t7 => ealu.IN1
+Z => eir.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+w <= w.DB_MAX_OUTPUT_PORT_TYPE
+cmar <= cmar.DB_MAX_OUTPUT_PORT_TYPE
+cmbr <= cmbr.DB_MAX_OUTPUT_PORT_TYPE
+embr <= embr.DB_MAX_OUTPUT_PORT_TYPE
+cir <= t1.DB_MAX_OUTPUT_PORT_TYPE
+eir <= eir.DB_MAX_OUTPUT_PORT_TYPE
+cpc <= cpc.DB_MAX_OUTPUT_PORT_TYPE
+epc <= epc.DB_MAX_OUTPUT_PORT_TYPE
+cd0 <= cd0.DB_MAX_OUTPUT_PORT_TYPE
+ed0 <= w.DB_MAX_OUTPUT_PORT_TYPE
+calu <= calu.DB_MAX_OUTPUT_PORT_TYPE
+ealu <= ealu.DB_MAX_OUTPUT_PORT_TYPE
+F0 <= F0.DB_MAX_OUTPUT_PORT_TYPE
+F1 <= F1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2
+add => z_ff:b2v_Z_ff_0.add
+sub => z_ff:b2v_Z_ff_0.sub
+inc => z_ff:b2v_Z_ff_0.inc
+dec => z_ff:b2v_Z_ff_0.dec
+t6 => z_ff:b2v_Z_ff_0.t6
+f1 => alu:b2v_alu.f1
+f0 => alu:b2v_alu.f0
+ealu => tri_state_model:b2v_alu_buffer.enable
+calu => dreg_e:b2v_alu_register.enable
+ed0 => tri_state_model:b2v_d0_buffer.enable
+cd0 => dreg_e:b2v_D0.enable
+epc => tri_state_model:b2v_pc_buffer.enable
+cpc => dreg_e:b2v_PC.enable
+eir => tri_state_model:b2v_ir_buffer.enable
+cir => dreg_e:b2v_IR.enable
+embr => tri_state_model:b2v_mbr_buffer.enable
+cmbr => dreg_e:b2v_MBR.enable
+cmar => dreg_e:b2v_MAR.enable
+clock => dreg_e:b2v_alu_register.clock
+clock => dreg_e:b2v_D0.clock
+clock => dreg_e:b2v_IR.clock
+clock => dreg_e:b2v_MAR.clock
+clock => dreg_e:b2v_MBR.clock
+clock => dreg_e:b2v_PC.clock
+clock => z_ff:b2v_Z_ff_0.clock
+reset => dreg_e:b2v_alu_register.reset
+reset => dreg_e:b2v_D0.reset
+reset => dreg_e:b2v_IR.reset
+reset => dreg_e:b2v_MAR.reset
+reset => dreg_e:b2v_MBR.reset
+reset => dreg_e:b2v_PC.reset
+reset => z_ff:b2v_Z_ff_0.reset
+data_bus[0] <> data_bus[0]
+data_bus[0] <> data_bus[0]
+data_bus[0] <> data_bus[0]
+data_bus[0] <> data_bus[0]
+data_bus[0] <> data_bus[0]
+data_bus[1] <> data_bus[1]
+data_bus[1] <> data_bus[1]
+data_bus[1] <> data_bus[1]
+data_bus[1] <> data_bus[1]
+data_bus[1] <> data_bus[1]
+data_bus[2] <> data_bus[2]
+data_bus[2] <> data_bus[2]
+data_bus[2] <> data_bus[2]
+data_bus[2] <> data_bus[2]
+data_bus[2] <> data_bus[2]
+data_bus[3] <> data_bus[3]
+data_bus[3] <> data_bus[3]
+data_bus[3] <> data_bus[3]
+data_bus[3] <> data_bus[3]
+data_bus[3] <> data_bus[3]
+data_bus[4] <> data_bus[4]
+data_bus[4] <> data_bus[4]
+data_bus[4] <> data_bus[4]
+data_bus[4] <> data_bus[4]
+data_bus[4] <> data_bus[4]
+data_bus[5] <> data_bus[5]
+data_bus[5] <> data_bus[5]
+data_bus[5] <> data_bus[5]
+data_bus[5] <> data_bus[5]
+data_bus[5] <> data_bus[5]
+data_bus[6] <> data_bus[6]
+data_bus[6] <> data_bus[6]
+data_bus[6] <> data_bus[6]
+data_bus[6] <> data_bus[6]
+data_bus[6] <> data_bus[6]
+data_bus[7] <> data_bus[7]
+data_bus[7] <> data_bus[7]
+data_bus[7] <> data_bus[7]
+data_bus[7] <> data_bus[7]
+data_bus[7] <> data_bus[7]
+Z <= z_ff:b2v_Z_ff_0.Z_out
+address_bus[0] <= dreg_e:b2v_MAR.q[0]
+address_bus[1] <= dreg_e:b2v_MAR.q[1]
+address_bus[2] <= dreg_e:b2v_MAR.q[2]
+address_bus[3] <= dreg_e:b2v_MAR.q[3]
+address_bus[4] <= dreg_e:b2v_MAR.q[4]
+opcode[0] <= dreg_e:b2v_IR.q[5]
+opcode[1] <= dreg_e:b2v_IR.q[6]
+opcode[2] <= dreg_e:b2v_IR.q[7]
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu
+f0 => adder_subtractor:adder_subtractor_inst.sel
+f0 => adder_subtractor:adder_subtractor_inst.cin
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => b_input[0].IN1
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => a_input.IN0
+f1 => b_input.IN0
+f1 => b_input[1].IN0
+f1 => b_input[2].IN0
+f1 => b_input[3].IN0
+f1 => b_input[4].IN0
+f1 => b_input[5].IN0
+f1 => b_input[6].IN0
+f1 => b_input[7].IN0
+p[0] => a_input.IN1
+p[1] => a_input.IN1
+p[2] => a_input.IN1
+p[3] => a_input.IN1
+p[4] => a_input.IN1
+p[5] => a_input.IN1
+p[6] => a_input.IN1
+p[7] => a_input.IN1
+q[0] => a_input.IN1
+q[0] => b_input.IN1
+q[1] => a_input.IN1
+q[1] => b_input[1].IN1
+q[2] => a_input.IN1
+q[2] => b_input[2].IN1
+q[3] => a_input.IN1
+q[3] => b_input[3].IN1
+q[4] => a_input.IN1
+q[4] => b_input[4].IN1
+q[5] => a_input.IN1
+q[5] => b_input[5].IN1
+q[6] => a_input.IN1
+q[6] => b_input[6].IN1
+q[7] => a_input.IN1
+q[7] => b_input[7].IN1
+Z <= Z.DB_MAX_OUTPUT_PORT_TYPE
+alu_out[0] <= adder_subtractor:adder_subtractor_inst.sum[0]
+alu_out[1] <= adder_subtractor:adder_subtractor_inst.sum[1]
+alu_out[2] <= adder_subtractor:adder_subtractor_inst.sum[2]
+alu_out[3] <= adder_subtractor:adder_subtractor_inst.sum[3]
+alu_out[4] <= adder_subtractor:adder_subtractor_inst.sum[4]
+alu_out[5] <= adder_subtractor:adder_subtractor_inst.sum[5]
+alu_out[6] <= adder_subtractor:adder_subtractor_inst.sum[6]
+alu_out[7] <= adder_subtractor:adder_subtractor_inst.sum[7]
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst
+sel => synthesized_wire_0.IN0
+sel => synthesized_wire_1.IN0
+sel => synthesized_wire_3.IN0
+sel => synthesized_wire_5.IN0
+sel => synthesized_wire_7.IN0
+sel => synthesized_wire_9.IN0
+sel => synthesized_wire_11.IN0
+sel => synthesized_wire_13.IN0
+cin => fulladder:b2v_adder1.CIN
+a[0] => fulladder:b2v_adder1.A
+a[1] => fulladder:b2v_adder2.A
+a[2] => fulladder:b2v_adder3.A
+a[3] => fulladder:b2v_adder4.A
+a[4] => fulladder:b2v_adder5.A
+a[5] => fulladder:b2v_adder6.A
+a[6] => fulladder:b2v_adder7.A
+a[7] => fulladder:b2v_adder8.A
+b[0] => synthesized_wire_0.IN1
+b[1] => synthesized_wire_1.IN1
+b[2] => synthesized_wire_3.IN1
+b[3] => synthesized_wire_5.IN1
+b[4] => synthesized_wire_7.IN1
+b[5] => synthesized_wire_9.IN1
+b[6] => synthesized_wire_11.IN1
+b[7] => synthesized_wire_13.IN1
+cout <= fulladder:b2v_adder8.Cout
+sum[0] <= fulladder:b2v_adder1.S
+sum[1] <= fulladder:b2v_adder2.S
+sum[2] <= fulladder:b2v_adder3.S
+sum[3] <= fulladder:b2v_adder4.S
+sum[4] <= fulladder:b2v_adder5.S
+sum[5] <= fulladder:b2v_adder6.S
+sum[6] <= fulladder:b2v_adder7.S
+sum[7] <= fulladder:b2v_adder8.S
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst|fulladder:b2v_adder1
+A => AxorB.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => AxorB.IN1
+B => Cout.IN0
+B => Cout.IN1
+CIN => S.IN1
+CIN => Cout.IN1
+CIN => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst|fulladder:b2v_adder2
+A => AxorB.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => AxorB.IN1
+B => Cout.IN0
+B => Cout.IN1
+CIN => S.IN1
+CIN => Cout.IN1
+CIN => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst|fulladder:b2v_adder3
+A => AxorB.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => AxorB.IN1
+B => Cout.IN0
+B => Cout.IN1
+CIN => S.IN1
+CIN => Cout.IN1
+CIN => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst|fulladder:b2v_adder4
+A => AxorB.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => AxorB.IN1
+B => Cout.IN0
+B => Cout.IN1
+CIN => S.IN1
+CIN => Cout.IN1
+CIN => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst|fulladder:b2v_adder5
+A => AxorB.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => AxorB.IN1
+B => Cout.IN0
+B => Cout.IN1
+CIN => S.IN1
+CIN => Cout.IN1
+CIN => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst|fulladder:b2v_adder6
+A => AxorB.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => AxorB.IN1
+B => Cout.IN0
+B => Cout.IN1
+CIN => S.IN1
+CIN => Cout.IN1
+CIN => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst|fulladder:b2v_adder7
+A => AxorB.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => AxorB.IN1
+B => Cout.IN0
+B => Cout.IN1
+CIN => S.IN1
+CIN => Cout.IN1
+CIN => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|alu:b2v_alu|adder_subtractor:adder_subtractor_inst|fulladder:b2v_adder8
+A => AxorB.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => AxorB.IN1
+B => Cout.IN0
+B => Cout.IN1
+CIN => S.IN1
+CIN => Cout.IN1
+CIN => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|tri_state_model:b2v_alu_buffer
+enable => data_out[0].OE
+enable => data_out[1].OE
+enable => data_out[2].OE
+enable => data_out[3].OE
+enable => data_out[4].OE
+enable => data_out[5].OE
+enable => data_out[6].OE
+enable => data_out[7].OE
+data_in[0] => data_out[0].DATAIN
+data_in[1] => data_out[1].DATAIN
+data_in[2] => data_out[2].DATAIN
+data_in[3] => data_out[3].DATAIN
+data_in[4] => data_out[4].DATAIN
+data_in[5] => data_out[5].DATAIN
+data_in[6] => data_out[6].DATAIN
+data_in[7] => data_out[7].DATAIN
+data_out[0] <= data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|dreg_e:b2v_alu_register
+reset => q_internal[0].ACLR
+reset => q_internal[1].ACLR
+reset => q_internal[2].ACLR
+reset => q_internal[3].ACLR
+reset => q_internal[4].ACLR
+reset => q_internal[5].ACLR
+reset => q_internal[6].ACLR
+reset => q_internal[7].ACLR
+clock => q_internal[0].CLK
+clock => q_internal[1].CLK
+clock => q_internal[2].CLK
+clock => q_internal[3].CLK
+clock => q_internal[4].CLK
+clock => q_internal[5].CLK
+clock => q_internal[6].CLK
+clock => q_internal[7].CLK
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+d[0] => q_next.IN1
+d[1] => q_next.IN1
+d[2] => q_next.IN1
+d[3] => q_next.IN1
+d[4] => q_next.IN1
+d[5] => q_next.IN1
+d[6] => q_next.IN1
+d[7] => q_next.IN1
+q[0] <= q_internal[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_internal[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_internal[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_internal[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q_internal[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q_internal[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q_internal[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q_internal[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|dreg_e:b2v_D0
+reset => q_internal[0].ACLR
+reset => q_internal[1].ACLR
+reset => q_internal[2].ACLR
+reset => q_internal[3].ACLR
+reset => q_internal[4].ACLR
+reset => q_internal[5].ACLR
+reset => q_internal[6].ACLR
+reset => q_internal[7].ACLR
+clock => q_internal[0].CLK
+clock => q_internal[1].CLK
+clock => q_internal[2].CLK
+clock => q_internal[3].CLK
+clock => q_internal[4].CLK
+clock => q_internal[5].CLK
+clock => q_internal[6].CLK
+clock => q_internal[7].CLK
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+d[0] => q_next.IN1
+d[1] => q_next.IN1
+d[2] => q_next.IN1
+d[3] => q_next.IN1
+d[4] => q_next.IN1
+d[5] => q_next.IN1
+d[6] => q_next.IN1
+d[7] => q_next.IN1
+q[0] <= q_internal[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_internal[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_internal[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_internal[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q_internal[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q_internal[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q_internal[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q_internal[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|tri_state_model:b2v_d0_buffer
+enable => data_out[0].OE
+enable => data_out[1].OE
+enable => data_out[2].OE
+enable => data_out[3].OE
+enable => data_out[4].OE
+enable => data_out[5].OE
+enable => data_out[6].OE
+enable => data_out[7].OE
+data_in[0] => data_out[0].DATAIN
+data_in[1] => data_out[1].DATAIN
+data_in[2] => data_out[2].DATAIN
+data_in[3] => data_out[3].DATAIN
+data_in[4] => data_out[4].DATAIN
+data_in[5] => data_out[5].DATAIN
+data_in[6] => data_out[6].DATAIN
+data_in[7] => data_out[7].DATAIN
+data_out[0] <= data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|dreg_e:b2v_IR
+reset => q_internal[0].ACLR
+reset => q_internal[1].ACLR
+reset => q_internal[2].ACLR
+reset => q_internal[3].ACLR
+reset => q_internal[4].ACLR
+reset => q_internal[5].ACLR
+reset => q_internal[6].ACLR
+reset => q_internal[7].ACLR
+clock => q_internal[0].CLK
+clock => q_internal[1].CLK
+clock => q_internal[2].CLK
+clock => q_internal[3].CLK
+clock => q_internal[4].CLK
+clock => q_internal[5].CLK
+clock => q_internal[6].CLK
+clock => q_internal[7].CLK
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+d[0] => q_next.IN1
+d[1] => q_next.IN1
+d[2] => q_next.IN1
+d[3] => q_next.IN1
+d[4] => q_next.IN1
+d[5] => q_next.IN1
+d[6] => q_next.IN1
+d[7] => q_next.IN1
+q[0] <= q_internal[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_internal[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_internal[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_internal[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q_internal[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q_internal[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q_internal[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q_internal[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|tri_state_model:b2v_ir_buffer
+enable => data_out[0].OE
+enable => data_out[1].OE
+enable => data_out[2].OE
+enable => data_out[3].OE
+enable => data_out[4].OE
+enable => data_out[5].OE
+enable => data_out[6].OE
+enable => data_out[7].OE
+data_in[0] => data_out[0].DATAIN
+data_in[1] => data_out[1].DATAIN
+data_in[2] => data_out[2].DATAIN
+data_in[3] => data_out[3].DATAIN
+data_in[4] => data_out[4].DATAIN
+data_in[5] => data_out[5].DATAIN
+data_in[6] => data_out[6].DATAIN
+data_in[7] => data_out[7].DATAIN
+data_out[0] <= data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|dreg_e:b2v_MAR
+reset => q_internal[0].ACLR
+reset => q_internal[1].ACLR
+reset => q_internal[2].ACLR
+reset => q_internal[3].ACLR
+reset => q_internal[4].ACLR
+reset => q_internal[5].ACLR
+reset => q_internal[6].ACLR
+reset => q_internal[7].ACLR
+clock => q_internal[0].CLK
+clock => q_internal[1].CLK
+clock => q_internal[2].CLK
+clock => q_internal[3].CLK
+clock => q_internal[4].CLK
+clock => q_internal[5].CLK
+clock => q_internal[6].CLK
+clock => q_internal[7].CLK
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+d[0] => q_next.IN1
+d[1] => q_next.IN1
+d[2] => q_next.IN1
+d[3] => q_next.IN1
+d[4] => q_next.IN1
+d[5] => q_next.IN1
+d[6] => q_next.IN1
+d[7] => q_next.IN1
+q[0] <= q_internal[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_internal[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_internal[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_internal[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q_internal[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q_internal[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q_internal[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q_internal[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|dreg_e:b2v_MBR
+reset => q_internal[0].ACLR
+reset => q_internal[1].ACLR
+reset => q_internal[2].ACLR
+reset => q_internal[3].ACLR
+reset => q_internal[4].ACLR
+reset => q_internal[5].ACLR
+reset => q_internal[6].ACLR
+reset => q_internal[7].ACLR
+clock => q_internal[0].CLK
+clock => q_internal[1].CLK
+clock => q_internal[2].CLK
+clock => q_internal[3].CLK
+clock => q_internal[4].CLK
+clock => q_internal[5].CLK
+clock => q_internal[6].CLK
+clock => q_internal[7].CLK
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+d[0] => q_next.IN1
+d[1] => q_next.IN1
+d[2] => q_next.IN1
+d[3] => q_next.IN1
+d[4] => q_next.IN1
+d[5] => q_next.IN1
+d[6] => q_next.IN1
+d[7] => q_next.IN1
+q[0] <= q_internal[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_internal[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_internal[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_internal[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q_internal[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q_internal[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q_internal[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q_internal[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|tri_state_model:b2v_mbr_buffer
+enable => data_out[0].OE
+enable => data_out[1].OE
+enable => data_out[2].OE
+enable => data_out[3].OE
+enable => data_out[4].OE
+enable => data_out[5].OE
+enable => data_out[6].OE
+enable => data_out[7].OE
+data_in[0] => data_out[0].DATAIN
+data_in[1] => data_out[1].DATAIN
+data_in[2] => data_out[2].DATAIN
+data_in[3] => data_out[3].DATAIN
+data_in[4] => data_out[4].DATAIN
+data_in[5] => data_out[5].DATAIN
+data_in[6] => data_out[6].DATAIN
+data_in[7] => data_out[7].DATAIN
+data_out[0] <= data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|dreg_e:b2v_PC
+reset => q_internal[0].ACLR
+reset => q_internal[1].ACLR
+reset => q_internal[2].ACLR
+reset => q_internal[3].ACLR
+reset => q_internal[4].ACLR
+reset => q_internal[5].ACLR
+reset => q_internal[6].ACLR
+reset => q_internal[7].ACLR
+clock => q_internal[0].CLK
+clock => q_internal[1].CLK
+clock => q_internal[2].CLK
+clock => q_internal[3].CLK
+clock => q_internal[4].CLK
+clock => q_internal[5].CLK
+clock => q_internal[6].CLK
+clock => q_internal[7].CLK
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN0
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+enable => q_next.IN1
+d[0] => q_next.IN1
+d[1] => q_next.IN1
+d[2] => q_next.IN1
+d[3] => q_next.IN1
+d[4] => q_next.IN1
+d[5] => q_next.IN1
+d[6] => q_next.IN1
+d[7] => q_next.IN1
+q[0] <= q_internal[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_internal[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_internal[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_internal[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q_internal[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q_internal[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q_internal[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q_internal[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|tri_state_model:b2v_pc_buffer
+enable => data_out[0].OE
+enable => data_out[1].OE
+enable => data_out[2].OE
+enable => data_out[3].OE
+enable => data_out[4].OE
+enable => data_out[5].OE
+enable => data_out[6].OE
+enable => data_out[7].OE
+data_in[0] => data_out[0].DATAIN
+data_in[1] => data_out[1].DATAIN
+data_in[2] => data_out[2].DATAIN
+data_in[3] => data_out[3].DATAIN
+data_in[4] => data_out[4].DATAIN
+data_in[5] => data_out[5].DATAIN
+data_in[6] => data_out[6].DATAIN
+data_in[7] => data_out[7].DATAIN
+data_out[0] <= data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|datapath:b2v_inst2|Z_ff:b2v_Z_ff_0
+reset => d_ff:d_ff0.reset
+clock => d_ff:d_ff0.clock
+Z => Z_d.IN1
+add => Z_sel.IN0
+sub => Z_sel.IN1
+inc => Z_sel.IN1
+dec => Z_sel.IN1
+t6 => Z_sel.IN1
+Z_out <= d_ff:d_ff0.q
+
+
+|simple_cpu|datapath:b2v_inst2|Z_ff:b2v_Z_ff_0|d_ff:d_ff0
+reset => q~reg0.ACLR
+clock => q~reg0.CLK
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|instruction_sequencer:b2v_sequencer_0
+opcode[0] => ~NO_FANOUT~
+opcode[1] => s1_next.IN1
+opcode[1] => s2_next.IN0
+opcode[1] => s0_next.IN1
+opcode[1] => s2_next.IN1
+opcode[1] => s2_next.IN0
+opcode[2] => s1_next.IN1
+opcode[2] => s2_next.IN1
+opcode[2] => s0_next.IN1
+opcode[2] => s2_next.IN1
+reset => d_ff:d_ff_0.reset
+reset => d_ff:d_ff_1.reset
+reset => d_ff:d_ff_2.reset
+clock => d_ff:d_ff_0.clock
+clock => d_ff:d_ff_1.clock
+clock => d_ff:d_ff_2.clock
+t0 <= t0.DB_MAX_OUTPUT_PORT_TYPE
+t1 <= t1.DB_MAX_OUTPUT_PORT_TYPE
+t2 <= t2.DB_MAX_OUTPUT_PORT_TYPE
+t3 <= t3.DB_MAX_OUTPUT_PORT_TYPE
+t4 <= t4.DB_MAX_OUTPUT_PORT_TYPE
+t5 <= t5.DB_MAX_OUTPUT_PORT_TYPE
+t6 <= t6.DB_MAX_OUTPUT_PORT_TYPE
+t7 <= t7.DB_MAX_OUTPUT_PORT_TYPE
+execute <= d_ff:d_ff_2.q
+
+
+|simple_cpu|instruction_sequencer:b2v_sequencer_0|d_ff:d_ff_0
+reset => q~reg0.ACLR
+clock => q~reg0.CLK
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|instruction_sequencer:b2v_sequencer_0|d_ff:d_ff_1
+reset => q~reg0.ACLR
+clock => q~reg0.CLK
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|simple_cpu|instruction_sequencer:b2v_sequencer_0|d_ff:d_ff_2
+reset => q~reg0.ACLR
+clock => q~reg0.CLK
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
